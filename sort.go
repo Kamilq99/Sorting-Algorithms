@@ -15,6 +15,21 @@ func BubbleSort(arr []int) {
 	fmt.Printf("Sorted array by Bubble Sort: %v", arr)
 }
 
+func SelectionSort(arr []int) {
+
+	for i := 0; i < len(arr); i++ {
+		min := i
+		for j := i + 1; j < len(arr); j++ {
+			if arr[j] < arr[min] {
+				min = j
+			}
+		}
+		arr[i], arr[min] = arr[min], arr[i]
+	}
+
+	fmt.Printf("Sorted array by Selection Sort: %v", arr)
+}
+
 func main() {
 
 	arr := []int{34, 12, 5, 99, 23, 47, 8, 64, 28, 1}
@@ -40,9 +55,9 @@ func main() {
 		BubbleSort(arr)
 	case 2:
 		SelectionSort(arr)
+	case 3:
+		InsertionSort(arr)
 	/*
-		case 3:
-			InsertionSort(arr)
 		case 4:
 			QuickSort(arr, 0, len(arr)-1)
 		case 5:
